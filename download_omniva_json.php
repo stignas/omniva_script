@@ -24,7 +24,7 @@ class OmnivaSaveFileExceptions extends Exception
 
 const OMNIVA_FILE_URL = 'https://www.omniva.ee/locations.json';
 const OMNIVA_FILE_PATH = '/var/www/miestomedus.tk/omnivaLocations.json';
-const OMNIVA_LOG_FILE = '/var/www/miestomedus.tk/omnivaLocationDownload.log';
+const OMNIVA_LOG_FILE = '/var/www/miestomedus.tk/omnivaLocationUpdate.log';
 
 /**
  * @throws OmnivaDownloadExceptions

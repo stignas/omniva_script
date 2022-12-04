@@ -56,7 +56,6 @@ function getOmnivaFile(): array
         die;
     }
     if (!file_get_contents(OMNIVA_FILE_URL)) {
-        error_log('Failed to connect and download' . OMNIVA_FILE_URL . PHP_EOL);
         throw new OmnivaDownloadExceptions('"' . OMNIVA_FILE_URL . '" download error.');
     }
     return json_decode(file_get_contents(OMNIVA_FILE_URL), true);

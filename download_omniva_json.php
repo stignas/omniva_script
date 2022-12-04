@@ -72,13 +72,6 @@ function filterOmnivaLocations(array $omnivaLocations): array
     return $filteredOmnivaLocations;
 }
 
-function writeLogToFile($logFilePath, string $message): void
-{
-    $stream = fopen($logFilePath, 'a');
-    fwrite($stream, $message);
-    fclose($stream);
-}
-
 /**
  * @throws OmnivaSaveFileExceptions
  */
@@ -89,6 +82,13 @@ function saveOmnivaLocations(array $filteredOmnivaLocations): int
         throw new OmnivaSaveFileExceptions('Error occured while saving file');
     }
     return file_put_contents(OMNIVA_FILE_PATH, json_encode($filteredOmnivaLocations, JSON_PRETTY_PRINT));
+}
+
+function writeLogToFile($logFilePath, string $message): void
+{
+    $stream = fopen($logFilePath, 'a');
+    fwrite($stream, $message);
+    fclose($stream);
 }
 
 try {

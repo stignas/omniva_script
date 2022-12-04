@@ -92,10 +92,6 @@ function writeLogToFile($logFilePath, string $message): void
 }
 
 try {
-
-    $successMsg = '@ ' . date_format(date_create(), 'Y-m-d H:i:s') . ' File download complete from: ' . OMNIVA_FILE_URL . PHP_EOL;
-    writeLogToFile(OMNIVA_LOG_FILE, $successMsg);
-    echo $successMsg . PHP_EOL;
     try {
         saveOmnivaLocations(filterOmnivaLocations(getOmnivaFile()));
         $successMsg = '@ ' . date_format(date_create(), 'Y-m-d H:i:s') . ' Filtered Omniva locations saved to: ' . OMNIVA_LOG_FILE . PHP_EOL;
